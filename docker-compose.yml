@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - 8000:8000
+    networks:
+      - backend
+  db:
+    hostname: db
+    image: postgres:14.7-alpine
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=zhanat
+      - POSTGRES_PASSWORD=1
+      - POSTGRES_DB=currency
+    networks:
+      - backend
+
+volumes:
+  postgres_data:
+
+networks:
+  backend:
+    driver: bridge

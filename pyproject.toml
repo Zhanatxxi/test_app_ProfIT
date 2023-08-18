@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "test-application"
+version = "0.1.0"
+description = ""
+authors = ["Zhanat <janat.200066@gmail.com>"]
+readme = "README.md"
+packages = [{include = "test_application"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.101.1"
+uvicorn = "^0.23.2"
+alembic = "^1.11.3"
+asyncpg = "^0.28.0"
+psycopg2 = "^2.9.7"
+passlib = "^1.7.4"
+email-validator = "^2.0.0.post2"
+greenlet = "^2.0.2"
+bcrypt = "^4.0.1"
+fastapi-jwt-auth = {extras = ["asymmetric"], version = "^0.5.0"}
+pydantic = {version = "1.10", extras = ["dotenv"]}
+dotenv = "^0.0.5"
+xmltodict = "^0.13.0"
+aiohttp = "^3.8.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
